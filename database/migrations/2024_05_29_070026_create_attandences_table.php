@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->date('date');
             $table->time('time_in');
-            $table->time('time_out');
+            $table->time('time_out')->nullable();
             $table->string('latlong_in');
-            $table->string('latlong_out');
+            $table->string('latlong_out')->nullable();
             $table->timestamps();
         });
     }

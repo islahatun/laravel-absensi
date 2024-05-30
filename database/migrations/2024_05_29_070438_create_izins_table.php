@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('izins', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->date('date');
+            $table->date('date_permission');
             $table->string('reason');
-            $table->string('is_approval');
+            $table->string('image')->nullable();
+            $table->string('is_approval')->nullable();
             $table->timestamps();
         });
     }
