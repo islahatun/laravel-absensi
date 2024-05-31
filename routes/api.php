@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\Api\AttendanceController;
 use App\Http\Controllers\api\IzinController;
+use App\Http\Controllers\api\NoteController;
+use Laravel\Prompts\Themes\Default\NoteRenderer;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +30,4 @@ Route::post('/checkOut', [AttendanceController::class, 'checkOut'])->middleware(
 Route::post('/isCheckedIn', [AttendanceController::class, 'isCheckedIn'])->middleware('auth:sanctum');
 Route::post('/updateProfile', [AuthController::class, 'updateProfile'])->middleware('auth:sanctum');
 Route::post('/createIzin', [IzinController::class, 'createIzin'])->middleware('auth:sanctum');
+Route::post('/createNote', [NoteController::class, 'store'])->middleware('auth:sanctum');
